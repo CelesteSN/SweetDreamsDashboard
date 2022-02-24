@@ -1,32 +1,30 @@
-import React, { Component } from "react";
 import Categoria from "./Categoria";
+import Axios from "axios";
+import React, { useState, useEffect } from "react";
 
 
-class CategoriasInDb extends Component {
-    constructor(){
-        super()
-        this.state = {
+function CategoriasInDb(){
 
-            categoriasList : []
+    const [categoriesList, setcategoriesList] = useState([]);
 
-        }
-    }
+    useEffect(() => {
 
-    componentDidMount(){
 
-        fetch("http://localhost:3030/dashboard/categories", {
-            mode: 'no-cors'
-          })       
-        .then(categorias =>{
-            console.log(categorias)
-            this.setState(categorias.data)
+        Axios({
+            url: "http://localhost:3030/dashboard/categories",
         })
-        .catch(error => console.log(error))
+            .then((response) => {
+                let listCategProd = response.data.categories;
+                console.log(listCategProd);
+                setcategoriesList(listCategProd);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
-    }
 
 
-render () {
 
     return (
          
@@ -39,7 +37,7 @@ render () {
 
                             {
                             
-                                this.state.categoriasList.map((categoria, index)=> {
+                            categoriesList.map((categoria, index)=> {
 
                                  return <Categoria  {...categoria} key = {index} />
 
@@ -56,8 +54,5 @@ render () {
     )
 
 }
-}
-
-
 
 export default CategoriasInDb

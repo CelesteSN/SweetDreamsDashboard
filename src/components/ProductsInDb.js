@@ -1,32 +1,24 @@
-import React, { Component } from "react";
 import ChartRow from './ChartRow';
-import axios from "axios";
+import Axios from "axios";
+import React, { useState, useEffect } from "react";
 
-class ProductsInDb extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
+function ProductsInDb(){
+const [productsList, setproductsList] = useState([]);
 
-           productsList : []
-
-        }
-    }
+    useEffect(() => {
 
 
-
-    componentDidMount(){
-let endpoint = "http://localhost:3030/dashboard/products";
-console.log("didMount");
-        axios.get(endpoint).then(res=>{
-            console.log("products", res.data.products)
-            this.setState({productsList : res.data.products})
-            }).catch(err=>console.log(err));
-
-        
-    }
-
-
-    render() {
+        Axios({
+            url: "http://localhost:3030/dashboard/products",
+        })
+            .then((response) => {
+                let listProd = response.data.products;
+                setproductsList(listProd);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
         return (
   
@@ -47,19 +39,19 @@ console.log("didMount");
                         </thead>
                        
                         <tbody>
-                    {
+                    
 
-                        this.state.productsList.map(product=> {
-<td>
-<tr key = {product.prod_id}>{product.name}</tr>
-</td>
+                        {
 
-                            // <ChartRow  {...product} key = {index} />
+productsList.map((product, index)=> {
 
 
-                        })
+    return <ChartRow  {...product} key = {index} />
 
-                    }
+
+})
+
+}
 
                         </tbody>
                     </table>
@@ -69,6 +61,4 @@ console.log("didMount");
 
     )
 }
-}
-
 export default ProductsInDb;

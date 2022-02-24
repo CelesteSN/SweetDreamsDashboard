@@ -19,20 +19,11 @@ let totalCategories = {
     color: 'warning',
     icon: 'fa-user',
 }
-//let cartProps = [productsInDb, totalAwards, actorsQuantity]
-// let cartProps = async () => {
-//     let endpoint = "http://localhost:3030/dashboard/products";
-//     await axios.get(endpoint).then(res => {
-//         productsInDb.quantity = res.data.products.length;
-//         console.log(productsInDb.quantity);
-//     }).catch(err => console.log(err));
-
-//     return [productsInDb, totalAwards, actorsQuantity]
-// }
 
 function Totals() {
-    const [cartProps, setCount] = useState([]);
+    const [cartProps, setCount] = useState([totalProducts, totalUsers, totalCategories]);
     useEffect(() => {
+        
         Axios({
             url: "http://localhost:3030/dashboard/products",
         })
@@ -45,16 +36,16 @@ function Totals() {
                 console.log(error);
             });
 
-        Axios({
+         Axios({
             url: "http://localhost:3030/dashboard/users",
-        })
+         })
             .then((response) => {
-                //setCount(response.data.products.lenght);
-                totalUsers.quantity = response.data.users.length;
-                setCount([totalProducts, totalUsers, totalCategories]);
-            })
-            .catch((error) => {
-                console.log(error);
+            
+                 totalUsers.quantity = response.data.users.length;
+                 setCount([totalProducts, totalUsers, totalCategories]);
+             })
+             .catch((error) => {
+                 console.log(error);
             });
 
 
@@ -70,7 +61,7 @@ function Totals() {
                 console.log(error);
             });
 
-    });
+    }, []);
     return (
 
         <div className="row">
