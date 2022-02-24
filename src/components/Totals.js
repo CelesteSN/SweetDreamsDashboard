@@ -28,7 +28,6 @@ function Totals() {
             url: "http://localhost:3030/dashboard/products",
         })
             .then((response) => {
-                //setCount(response.data.products.lenght);
                 totalProducts.quantity = response.data.products.length;
                 setCount([totalProducts, totalUsers, totalCategories]);
             })
@@ -53,7 +52,6 @@ function Totals() {
             url: "http://localhost:3030/dashboard/categories",
         })
             .then((response) => {
-                //setCount(response.data.products.lenght);
                 totalCategories.quantity = response.data.categories.length;
                 setCount([totalProducts, totalUsers, totalCategories]);
             })
