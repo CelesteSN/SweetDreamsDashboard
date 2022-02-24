@@ -1,8 +1,25 @@
-import React from "react"
-import imagenFondo from '../assets/images/mandalorian.jpg'
+import imagenFondo from '../assets/images/mandalorian.jpg';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 
 function LastProductInDb () {
+	const [lastproduct, setLastProduct] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const res = await axios('http://localhost:3030/dashboard/products%27');
+                const data = await res.json();
+                const lastProd = data.products.sort((a, b) => a - b ).reverse().slice(0, 1);
+                setLastProduct(lastProd);
+            } catch (e) {
+                console.log('error', e);
+            }
+
+        })();
+    }, []);
+
 return(
      <>
                

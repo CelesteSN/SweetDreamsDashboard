@@ -17,26 +17,16 @@ class ProductsInDb extends Component {
     componentDidMount(){
 let endpoint = "http://localhost:3030/dashboard/products";
 console.log("didMount");
-        // axios.get(endpoint).then(res=>{
-        //     console.log("products", res.data.products)
-        //     alert("didMOunt")
-        //     this.setState({productsList : res.data.products})
-        //     }).catch(err=>console.log(err));
+        axios.get(endpoint).then(res=>{
+            console.log("products", res.data.products)
+            this.setState({productsList : res.data.products})
+            }).catch(err=>console.log(err));
 
-        fetch("http://localhost:3030/dashboard/products", {
-           mode: 'no-cors'
-          })
         
-         .then(products =>{
-         console.log(products)
-             this.setState(products.data)
-         })
-         .catch(error => console.log(error))
-
     }
 
 
-    render () {
+    render() {
 
         return (
   
@@ -59,10 +49,12 @@ console.log("didMount");
                         <tbody>
                     {
 
-                        this.state.productsList.map((product, index)=> {
+                        this.state.productsList.map(product=> {
+<td>
+<tr key = {product.prod_id}>{product.name}</tr>
+</td>
 
-
-                         <ChartRow  {...product} key = {index} />
+                            // <ChartRow  {...product} key = {index} />
 
 
                         })
