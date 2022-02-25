@@ -36,7 +36,7 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span>
+                        <span>Sweet Dreams - Dashboard </span>
                     </Link>
                 </li>
 
@@ -47,7 +47,7 @@ function SideBar(){
                 <li className="nav-item">
                      <Link className="nav-link collapsed" to="/stats">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Stats</span>
+                        <span>Estadísticas</span>
                     </Link>
                     
                 </li>
@@ -56,7 +56,7 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/categories">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Categories</span>
+                        <span>Categorías</span>
                     </Link>
                 </li>
                 
@@ -65,16 +65,16 @@ function SideBar(){
                 <li className="nav-item">
                     <a className="nav-link" href="/table">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
+                        <span>Tablas</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
+                {/* <li className="nav-item nav-link">
                     <Link className="nav-link" to="/SearchMovies">
                         <i className="fas fa-search"></i>
                         <span>Search a movie</span>
                     </Link>
-                </li>
+                </li> */}
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>

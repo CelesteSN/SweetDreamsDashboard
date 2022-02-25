@@ -15,7 +15,7 @@ return(
                 </div>
             </div>
             <div className="col-auto">
-                <i className={`fas ${props.icon} fa-2x text-gray-300`}></i>
+                <i className={`fas ${props.icon} fa-2x text-${props.color}`}></i>
             </div>
         </div>
     </div>

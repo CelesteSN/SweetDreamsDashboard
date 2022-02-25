@@ -6,10 +6,10 @@ function ContentWrapper(){
     return (
         <React.Fragment>
             {/*<!-- Content Wrapper -->*/}
-            <div id="content-wrapper" className="d-flex flex-column">
+            <div id="content-wrapper" className="d-flex flex-column main-content">
                 {/*<!-- Main Content -->*/}
                 <div id="content">
-                    <TopBar />
+                    {/* <TopBar /> */}
                     <ContentRowTop />
                     <Footer />
                 </div>
