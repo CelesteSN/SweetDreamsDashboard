@@ -34,7 +34,7 @@ function LastProductInDb() {
                     <div className="card-body">
                         <div className="text-center">
                             <h3>{lastproduct.name}</h3>
-                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src={lastproduct.image} alt="No hay imagen de fondo" />
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + 'rem' }} src= {"http://localhost:3030"+lastproduct.image} alt="No hay imagen de fondo" />
                         </div>
                         <p>{lastproduct.description}</p>
                         <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver datalle</a>
