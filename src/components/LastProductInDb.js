@@ -14,7 +14,7 @@ function LastProductInDb() {
         })
             .then((response) => {
                 let lastProd = response.data.products[response.data.products.length - 1];
-                console.log(lastproduct);
+               // console.log(lastproduct);
                 setLastProduct(lastProd)
             })
             .catch((error) => {

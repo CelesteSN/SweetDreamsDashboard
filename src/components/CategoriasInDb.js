@@ -22,7 +22,7 @@ function CategoriasInDb() {
                     .then((response) => {
                         let products = response.data.products;
                         listCategProd.forEach(element => {
-                            let productsByCateg = products.filter(item => item.prod_categ_id == element.prod_categ_id)
+                            let productsByCateg = products.filter(item => item.prod_categ_id === element.prod_categ_id)
                             element.productsCount = productsByCateg.length;
                         });
                         setcategoriesList(listCategProd);

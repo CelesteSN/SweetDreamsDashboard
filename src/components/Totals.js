@@ -5,25 +5,24 @@ import Axios from "axios";
 let totalProducts = {
     title: 'Total de productos',
     color: 'primary',
-    icon: 'fa-film'
+    icon: 'fa-cupcake'
 }
 
 let totalUsers = {
     title: 'Total de usuarios',
     color: 'success',
-    icon: 'fa-award',
+    icon: 'fa-user',
 }
 
 let totalCategories = {
     title: 'Total de categorias',
     color: 'warning',
-    icon: 'fa-user',
+    icon: 'fa-list-tree',
 }
 
 function Totals() {
     const [cartProps, setCount] = useState([totalProducts, totalUsers, totalCategories]);
     useEffect(() => {
-        
         Axios({
             url: "http://localhost:3030/dashboard/products",
         })
