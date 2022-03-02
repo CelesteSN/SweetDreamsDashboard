@@ -35,7 +35,7 @@ function SideBar(){
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
-                        <i className="fas fa-fw fa-tachometer-alt"></i>
+                        <i className="fas fa-fw fa-tasks"></i>
                         <span>Sweet Dreams - Dashboard </span>
                     </Link>
                 </li>
@@ -46,7 +46,7 @@ function SideBar(){
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                      <Link className="nav-link collapsed" to="/stats">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i className="fas fa-fw fa-chart-bar"></i>
                         <span>Estadísticas</span>
                     </Link>
                     
@@ -55,7 +55,7 @@ function SideBar(){
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
                     <Link className="nav-link" to="/categories">
-                        <i className="fas fa-fw fa-folder"></i>
+                        <i className="fas fa-fw fa-list-ul"></i>
                         <span>Categorías</span>
                     </Link>
                 </li>
@@ -64,8 +64,8 @@ function SideBar(){
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/table">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tablas</span></a>
+                        <i className="fas fa-fw fa-cookie"></i>
+                        <span>Productos</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}

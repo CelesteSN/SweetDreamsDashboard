@@ -5,7 +5,7 @@ import Axios from "axios";
 let totalProducts = {
     title: 'Total de productos',
     color: 'primary',
-    icon: 'fa-cupcake'
+    icon: 'fa-cookie-bite',
 }
 
 let totalUsers = {
@@ -17,7 +17,7 @@ let totalUsers = {
 let totalCategories = {
     title: 'Total de categorias',
     color: 'warning',
-    icon: 'fa-list-tree',
+    icon: 'fa-list-ul',
 }
 
 function Totals() {

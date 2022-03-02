@@ -360,6 +360,10 @@ template {
 .h6, h6 {
     font-size: 1rem
 }
+/*Custom Sweet Dreams*/
+h3, .h5, p, td{
+    color:#5a5c69;
+}
 
 .lead {
     font-size: 1.25rem;
@@ -4286,6 +4290,12 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     padding: 1.25rem
 }
 
+/*Custom Sweet Dreams*/
+.card-body img{
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+}
 .card-title {
     margin-bottom: .75rem
 }
