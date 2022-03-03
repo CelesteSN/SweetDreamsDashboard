@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-
-import noPoster from '../assets/images/no-poster.jpg';
+import React from 'react';
 
 function SearchMovies(){
 
