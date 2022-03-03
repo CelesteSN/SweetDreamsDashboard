@@ -10,23 +10,21 @@ function ProductsInDb() {
             url: "http://localhost:3030/dashboard/products",
         })
             .then((response) => {
-                let listProd = response.data.products;
-
-
+                let listProd = response.data.products.rows;
                 Axios({
                     url: "http://localhost:3030/dashboard/categories",
                 })
                     .then((response) => {
-                        let categories = response.data.categories;
+                        let categories = response.data.categories.rows;
                         listProd.forEach(element => {
-                            let productsByCateg = categories.filter(item => item.prod_categ_id == element.prod_categ_id)
+                            let productsByCateg = categories.filter(item => item.prod_categ_id === element.prod_categ_id)
                             element.productsCount = productsByCateg[0].name;
                         });
                         setproductsList(listProd);
                     })
                     .catch((error) => {
                         console.log(error);
-                    })
+                    });
             })
             .catch((error) => {
                 console.log(error);

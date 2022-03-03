@@ -7,15 +7,12 @@ function LastProductInDb() {
     const [lastproduct, setLastProduct] = useState([]);
 
     useEffect(() => {
-
-
         Axios({
             url: "http://localhost:3030/dashboard/products",
         })
             .then((response) => {
-                let lastProd = response.data.products[response.data.products.length - 1];
-               // console.log(lastproduct);
-                setLastProduct(lastProd)
+                let lastProd = response.data.products.rows[response.data.products.rows.length - 1];
+                setLastProduct(lastProd);
             })
             .catch((error) => {
                 console.log(error);

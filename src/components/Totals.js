@@ -27,7 +27,7 @@ function Totals() {
             url: "http://localhost:3030/dashboard/products",
         })
             .then((response) => {
-                totalProducts.quantity = response.data.products.length;
+                totalProducts.quantity = response.data.products.rows.length;
                 setCount([totalProducts, totalUsers, totalCategories]);
             })
             .catch((error) => {
@@ -38,8 +38,7 @@ function Totals() {
             url: "http://localhost:3030/dashboard/users",
          })
             .then((response) => {
-            
-                 totalUsers.quantity = response.data.users.length;
+                 totalUsers.quantity = response.data.users.rows.length;
                  setCount([totalProducts, totalUsers, totalCategories]);
              })
              .catch((error) => {
@@ -51,7 +50,7 @@ function Totals() {
             url: "http://localhost:3030/dashboard/categories",
         })
             .then((response) => {
-                totalCategories.quantity = response.data.categories.length;
+                totalCategories.quantity = response.data.categories.rows.length;
                 setCount([totalProducts, totalUsers, totalCategories]);
             })
             .catch((error) => {
