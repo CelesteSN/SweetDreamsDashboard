@@ -58,8 +58,8 @@ function Totals() {
             });
 
     }, []);
-    return (
 
+    return (
         <div className="row">
             {
                 cartProps.map((item, i) => {

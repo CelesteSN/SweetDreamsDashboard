@@ -1,9 +1,6 @@
 import React from 'react';
 import image from '../assets/images/logo-sweet-dreams-brand.png';
-import {Route, Routes, Link} from 'react-router-dom'
-
-
-
+import {Route, Routes, Link} from 'react-router-dom';
 
 import Error404 from './Error404';
 import CategoriasInDb from './CategoriasInDb';
@@ -12,9 +9,6 @@ import Totals from './Totals';
 import CategoriesDetail from './CategoriesDetail';
 import ContentWrapper from './ContentWrapper';
 import SearchMovies from './SearchMovies';
-
-
-
 
 function SideBar(){
     return(
@@ -90,6 +84,7 @@ function SideBar(){
         <Route path="/table" element = {<ProductsInDb />} />
         <Route path="/categories/:id" element = {<CategoriesDetail />} />
         <Route path="/search" element = {<SearchMovies />} />
+        <Route path="*" element = {<Error404 />} />
 
 
           {/*<Route path='*' element= {<Error404 />} /> */}
